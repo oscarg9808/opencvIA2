@@ -19,7 +19,7 @@
 using namespace std;
 using namespace cv;
 
-class HuMomentsExtractor{
+class Extractor{
     
     private:
         string outDir;
@@ -31,9 +31,9 @@ class HuMomentsExtractor{
         
         // Hu Moments previously extracted for Red, Blue, and Green colors:
         
-        double basehumoments[3][7] = {{0.269826,0.000812627,0.00186835,0.000519597,1.97508e-07,-6.97519e-06,-4.72318e-07},
-                {0.192662,0.00482353,0.00140656,0.000142982,6.38524e-08,9.80799e-06,-5.86207e-09},
-                {0.346388,0.0147489,0.00477836,0.00188822,-5.44637e-06,-0.000190728,-1.58308e-06}};
+        double basehumoments[3][7] = {{0.303186,0.0027931,0.00233324,0.000591961,3.53286e-07,-6.80602e-06,-5.99317e-07},
+                {0.202415,0.0126813,0.000313626,3.61459e-05,1.39851e-09,6.56449e-07,3.58543e-09},
+                {0.201398,0.000601995,0.000203586,9.69691e-05,7.71919e-09,2.35965e-06,-1.12269e-08}};
         
         // Red: hsv-min (0,53,162)    hsv-max (12,192,244)
         // Blue: hsv-min (83,125,183)   hsv-max (137,186,232)
@@ -59,7 +59,7 @@ class HuMomentsExtractor{
         */
 
     public:
-        HuMomentsExtractor(string = "fichero.txt");
+        Extractor(string = "fichero.txt");
         vector<double> extractHuMoments(Mat);
         vector<double> extractHuMoments(Mat,int,int,int,int,int,int);
         void capture();
